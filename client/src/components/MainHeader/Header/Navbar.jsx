@@ -1,28 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Search from "../Search/Search";
-import Badge from '@mui/material/Badge';
-import { styled } from '@mui/material/styles';
-import IconButton from '@mui/material/IconButton';
+import Badge from "@mui/material/Badge";
+import { styled } from "@mui/material/styles";
+import IconButton from "@mui/material/IconButton";
 import { GoGitCompare } from "react-icons/go";
 import { FaRegHeart } from "react-icons/fa6";
 import { MdOutlineShoppingCart } from "react-icons/md";
 
-
-
-
 const StyledBadge = styled(Badge)(({ theme }) => ({
-  '& .MuiBadge-badge': {
+  "& .MuiBadge-badge": {
     right: -2,
     top: 13,
     border: `2px solid ${(theme.vars ?? theme).palette.background.paper}`,
-    padding: '0 4px',
+    padding: "0 4px",
   },
 }));
 
 const Navbar = () => {
   return (
-    <div className="header mt-5 h-[80px] border-b">
+    <div className="header py-4 h-[80px] border-b border-gray-300">
       <div className="container flex items-center justify-between">
         {/* Image Logo */}
         <div className="col1 w-[25%] flex items-center justify-start">
@@ -42,7 +39,7 @@ const Navbar = () => {
                 to="/login"
                 className="text-[15px] font[500] transition hover:text-[#ff5252]"
               >
-                Login 
+                Login
               </Link>
               <span className="mx-1">/ </span>
               <Link
@@ -54,22 +51,22 @@ const Navbar = () => {
             </li>
             <li className="list-none">
               <IconButton aria-label="cart">
-                <StyledBadge  badgeContent={4} color="secondary">
-                  <GoGitCompare size={27}/>
+                <StyledBadge badgeContent={4} color="secondary">
+                  <GoGitCompare size={27} />
                 </StyledBadge>
               </IconButton>
             </li>
             <li className="list-none">
               <IconButton aria-label="cart">
                 <StyledBadge badgeContent={4} color="secondary">
-                  <FaRegHeart size={27}/>
+                  <FaRegHeart size={27} />
                 </StyledBadge>
               </IconButton>
             </li>
             <li className="list-none">
               <IconButton aria-label="cart">
                 <StyledBadge badgeContent={1} color="secondary">
-                  <MdOutlineShoppingCart size={27}/>
+                  <MdOutlineShoppingCart size={27} />
                 </StyledBadge>
               </IconButton>
             </li>

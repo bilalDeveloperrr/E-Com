@@ -5,3 +5,16 @@ ul .header-link:hover  {
 .MuiBadge-badge {
    background-color: #ff5252 !important;
 }
+
+.navigation-link:hover {
+    color: #ff5252;
+}
+
+.link:hover{
+    color: #ff5252;
+}
+
+
+/* .categoryPanel .submenu {
+    display: none;
+} */
