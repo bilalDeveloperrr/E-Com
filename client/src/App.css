@@ -14,7 +14,11 @@ ul .header-link:hover  {
     color: #ff5252;
 }
 
+.isActive{
+    background-color: rgb(208, 208, 26) !important;
+}
 
-/* .categoryPanel .submenu {
-    display: none;
-} */
+
+.fashion-nav li Button {
+    text-transform: capitalize !important;
+}

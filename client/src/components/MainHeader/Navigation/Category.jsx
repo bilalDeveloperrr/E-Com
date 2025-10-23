@@ -9,8 +9,12 @@ import { Link } from "react-router-dom";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 
 const Category = ({ open, onClose }) => {
+  //
+  //
+  //
   const [submenuIndex, setSubmenuIndex] = useState(null);
   const [innerSubmenuIndex, setInnerSubmenuIndex] = useState(null);
+  const [isActive, setIsActive] = useState(null);
 
   const openSubmenu = (index) => {
     setSubmenuIndex(submenuIndex === index ? null : index);
@@ -19,6 +23,13 @@ const Category = ({ open, onClose }) => {
 
   const openInnerSubmenu = (index) => {
     setInnerSubmenuIndex(innerSubmenuIndex === index ? null : index);
+  };
+
+  const handleClose = () => {
+    setIsActive(null);
+    setSubmenuIndex(null);
+    setInnerSubmenuIndex(null);
+    onClose();
   };
 
   const categories = [
@@ -81,36 +92,62 @@ const Category = ({ open, onClose }) => {
         <Typography variant="subtitle1" fontWeight="bold">
           Categories
         </Typography>
-        <IconButton onClick={onClose}>
+        <IconButton onClick={handleClose}>
           <CloseIcon />
         </IconButton>
       </Box>
 
-      {/* Content */}
+      {/*Main Content */}
       <div className="scroll">
         <ul className="w-full py-2">
           {categories.map((category, index) => (
             <li key={index} className="list-none">
               {/* Main Category */}
-              <div className="flex items-center justify-between pl-3 pr-2 py-2 hover:bg-gray-100 transition">
-                <Button
-                  onClick={() => openSubmenu(index)}
-                  className="!text-black !justify-start !w-full !text-left !capitalize"
+              <div className="flex items-center justify-between pl-3 pr-2 py-2 transition">
+                <div
+                  onClick={() => {
+                    if (isActive === index) {
+                      setIsActive(null);
+                      setSubmenuIndex(null);
+                    } else {
+                      setIsActive(index);
+                      setSubmenuIndex(index);
+                    }
+                    setInnerSubmenuIndex(null);
+                  }}
+                  className={`flex items-center justify-between !w-full !text-left rounded cursor-pointer ${
+                    isActive === index
+                      ? "!bg-[#ff5252] !text-white"
+                      : "!text-black hover:!bg-[#ff5252] hover:!text-white"
+                  }`}
                 >
-                  {category.title}
-                </Button>
-                <IconButton
-                  size="small"
-                  onClick={() => openSubmenu(index)}
-                  className="!text-gray-700 hover:!bg-gray-200"
-                >
-                  <IoIosArrowDropdownCircle
-                    size={20}
-                    className={`transition-transform ${
-                      submenuIndex === index ? "rotate-180" : ""
-                    }`}
-                  />
-                </IconButton>
+                  <div className="button-category">
+                    <Button
+                      className={`!capitalize ${isActive === index ? "!text-white" : "!text-black"}`}
+                    >
+                      {category.title}
+                    </Button>
+                  </div>
+
+                  <div className="mr-4">
+                    <IconButton
+                      size="small"
+                      onClick={() => openSubmenu(index)}
+                      className=""
+                    >
+                      <IoIosArrowDropdownCircle
+                        size={20}
+                        className={`transition-transform  ${
+                          submenuIndex === index ? "rotate-180" : ""
+                        } ${
+                          isActive === index
+                            ? "!text-gray-700 !bg-gray-200 rounded"
+                            : ""
+                        }`}
+                      />
+                    </IconButton>
+                  </div>
+                </div>
               </div>
 
               {/* Submenu */}
@@ -128,10 +165,10 @@ const Category = ({ open, onClose }) => {
                         <IconButton
                           size="small"
                           onClick={() => openInnerSubmenu(subIndex)}
-                          className="!text-gray-600 hover:!bg-gray-100"
+                          className="!mr-10 !text-gray-600 hover:!bg-gray-100"
                         >
                           <IoIosArrowDropdownCircle
-                            size={18}
+                            size={20}
                             className={`transition-transform ${
                               innerSubmenuIndex === subIndex ? "rotate-180" : ""
                             }`}
@@ -147,7 +184,7 @@ const Category = ({ open, onClose }) => {
                               <Link
                                 to={item.link}
                                 onClick={onClose} // closes drawer on click
-                                className="block text-sm text-gray-600 hover:text-black py-1 transition"
+                                className="block text-sm text-gray-600 hover:text-[#ff5252] py-1 transition"
                               >
                                 {item.name}
                               </Link>
