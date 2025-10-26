@@ -22,3 +22,37 @@ ul .header-link:hover  {
 .fashion-nav li Button {
     text-transform: capitalize !important;
 }
+
+
+
+
+
+.swiper-button-prev {
+    background-color: transparent;
+    margin-left: 20px !important;
+    border-radius: 50%;
+    padding: 10px;
+    color: #000 !important;
+}
+.swiper-button-prev:hover {
+    background-color: #ff5252;
+    border-radius: 50%;
+    padding: 10px;
+    color: #fff !important;
+}
+.swiper-button-next {
+    background-color: transparent;
+    margin-right: 20px !important;
+    border-radius: 50%;
+    padding: 10px;
+    color: #000 !important;
+}
+.swiper-button-next:hover {
+    background-color: #ff5252;
+    border-radius: 50%;
+    padding: 10px;
+    color: #fff !important;
+}
+.mySwiper {
+    overflow: inherit !important;
+}
