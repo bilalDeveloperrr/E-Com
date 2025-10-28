@@ -35,6 +35,11 @@ const HomeSlider = () => {
             "https://serviceapi.spicezgold.com/download/1759938751802_30744.jpg",
             "https://serviceapi.spicezgold.com/download/1751685130717_NewProject(8).jpg",
             "https://serviceapi.spicezgold.com/download/1748955932914_NewProject(1).jpg",
+            "https://serviceapi.spicezgold.com/download/1761362043357_34292.jpg",
+            "https://serviceapi.spicezgold.com/download/1761362025223_34295.jpg",
+            "https://serviceapi.spicezgold.com/download/1759938751802_30744.jpg",
+            "https://serviceapi.spicezgold.com/download/1751685130717_NewProject(8).jpg",
+            "https://serviceapi.spicezgold.com/download/1748955932914_NewProject(1).jpg",
           ].map((src, index) => (
             <SwiperSlide
               key={index}
