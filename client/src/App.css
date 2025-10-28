@@ -1,24 +1,18 @@
 ul .header-link:hover  {
     color: #ff5252;
 }
-
 .MuiBadge-badge {
    background-color: #ff5252 !important;
 }
-
 .navigation-link:hover {
     color: #ff5252;
 }
-
 .link:hover{
     color: #ff5252;
 }
-
 .isActive{
     background-color: rgb(208, 208, 26) !important;
 }
-
-
 .fashion-nav li Button {
     text-transform: capitalize !important;
 }
@@ -26,7 +20,7 @@ ul .header-link:hover  {
 
 
 
-
+/* Home Top Slider Section */
 .swiper-button-prev {
     background-color: transparent;
     margin-left: 20px !important;

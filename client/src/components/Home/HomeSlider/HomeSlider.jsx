@@ -18,11 +18,11 @@ const HomeSlider = () => {
           spaceBetween={10}
           modules={[Navigation, Autoplay]}
           autoplay={{
-            delay: 2500,
+            delay: 2000,
             disableOnInteraction: false,
           }}
           loop={true}
-          className="mySwiper custom-swiper"
+          className="mySwiper"
           breakpoints={{
             320: { spaceBetween: 5 },
             640: { spaceBetween: 10 },
